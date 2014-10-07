@@ -4,9 +4,11 @@
 	<title>Kevin Hill Project 1</title>
 	<script src="queryline.js"></script>
 	<link rel="stylesheet" href="style.css">
+	
 </head>
-<body>
-	<select name="" id="derp">
+<!-- Create On Start -->
+<body onload="createFirstSelect()">
+	<!-- <select name="" id="derp">
 		<option value="I" class="">1</option>
 		<option value="Hate" class="">2</option>
 		<option value="Dumb" class="">3</option>
@@ -25,57 +27,7 @@
 		<button onclick="addSelect()">
 			DICK
 		</button>
-	</div>
+	</div> -->
 
-	<!-- <div class="fml">
-		<p>The world is filled with possiblities. Unless you're screwed. Then never mind.</p>
-	</div>
-	<div class="fml">
-		<p>The world is filled with possiblities. Unless you're screwed. Then never mind.</p>
-	</div>
-	<div class="fml">
-		<p>The world is filled with possiblities. Unless you're screwed. Then never mind.</p>
-	</div>
-	<div class="fml">
-		<p>The world is filled with possiblities. Unless you're screwed. Then never mind.</p>
-	</div>
-	<div class="fml">
-		
-	</div>
-	<div class="fml">
-		<p>The world is filled with possiblities. Unless you're screwed. Then never mind.</p>
-	</div>
-	<div class="fml">
-		<p>The world is filled with possiblities. Unless you're screwed. Then never mind.</p> -->
-	</div>
-	<script>
-		var myDiv = $('#fml'); 
-		var selectArr = ['I', 'Hate', 'People', 'So', 'Much'];
-		function addSelect () {
-			console.log(this);
-			// var selectList = document.createElement("select");
-			// selectList.id = "mySelect";
-			// myDiv.appendChild(selectList);
-			
-			// for (var i = 0; i < selectArr.length; i++) {
-			// 	var option = document.createElement("option");
-			// 	option.value = selectArr[i];
-			// 	option.text = selectArr[i];
-			// 	selectList.appendChild(option);
-			// }
-			
-		}
-		
-		var divSelect = $('select');
-		for(var i=0;i<divSelect.length;i++){
-			// console.log(divSelect[i]);
-		   divSelect[i].addEventListener('change', function () {
-		   	console.log(this.options[this.selectedIndex].text);
-		   	console.log(this.value);
-		   }, false);
-		}
-		
-
-	</script>
 </body>
 </html>
