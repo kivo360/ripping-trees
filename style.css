@@ -1,11 +1,11 @@
-div{
-	padding: 9%;
+body{
+	background-color: black;
+	color: white;
 }
 
-div.derp{
-	background-color: blue;
+.visible{
+	 visibility: visible;
 }
-
-div#derp{
-	background-color: red;
+.not-visible{
+	 visibility: hidden;
 }

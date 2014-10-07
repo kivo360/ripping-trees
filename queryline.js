@@ -5,32 +5,25 @@ var dataSet1 = {
 				{
 					"parent": "#",
 					"_id": "0001",
-					"value": "item1",
+					"value": "chevy",
 					"children": [
 						{
 							"parent": "0001",
 							"_id": "0005",
-							"value": "item1",
+							"value": "turbo",
 							"children": [
 								{
 									"parent": "0005",
 									"_id": "0015",
-									"value": "item1",
+									"value": "pressure",
 									"children": [
-										{
-											"parent": "0015",
-											"_id": "0025",
-											"value": "item1",
-											"children": [
-															
-											]
-										}		
+										
 									]
 								},
 								{
 									"parent": "0005",
 									"_id": "0016",
-									"value": "item1",
+									"value": "burst",
 									"children": [
 													
 									]
@@ -40,12 +33,12 @@ var dataSet1 = {
 						{
 							"parent": "0001",
 							"_id": "0006",
-							"value": "item1",
+							"value": "engine",
 							"children": [
 								{
 									"parent": "0006",
 									"_id": "0017",
-									"value": "item1",
+									"value": "herp",
 									"children": [
 													
 									]
@@ -53,7 +46,7 @@ var dataSet1 = {
 								{
 									"parent": "0006",
 									"_id": "0018",
-									"value": "item1",
+									"value": "derp",
 									"children": [
 													
 									]
@@ -63,12 +56,12 @@ var dataSet1 = {
 						{
 							"parent": "0001",
 							"_id": "0007",
-							"value": "item1",
+							"value": "wheel",
 							"children": [
 								{
 									"parent": "0007",
 									"_id": "0019",
-									"value": "item1",
+									"value": "big",
 									"children": [
 													
 									]
@@ -76,7 +69,7 @@ var dataSet1 = {
 								{
 									"parent": "0007",
 									"_id": "0020",
-									"value": "item1",
+									"value": "small",
 									"children": [
 													
 									]
@@ -88,32 +81,25 @@ var dataSet1 = {
 				{
 					"parent": "#",
 					"_id": "0002",
-					"value": "item2",
+					"value": "Ford",
 					"children": [
 						{
-							"parent": "0001",
-							"_id": "0005",
-							"value": "item1",
+							"parent": "0002",
+							"_id": "0021",
+							"value": "Transmission",
 							"children": [
 								{
-									"parent": "0005",
-									"_id": "0015",
-									"value": "item1",
+									"parent": "0021",
+									"_id": "0024",
+									"value": "Well Tuned",
 									"children": [
-										{
-											"parent": "0015",
-											"_id": "0025",
-											"value": "item1",
-											"children": [
-															
-											]
-										}		
+												
 									]
 								},
 								{
-									"parent": "0005",
-									"_id": "0016",
-									"value": "item1",
+									"parent": "0021",
+									"_id": "0025",
+									"value": "Loose",
 									"children": [
 													
 									]
@@ -121,22 +107,22 @@ var dataSet1 = {
 							]
 						},
 						{
-							"parent": "0001",
-							"_id": "0006",
-							"value": "item1",
+							"parent": "0002",
+							"_id": "0022",
+							"value": "Engine",
 							"children": [
 								{
-									"parent": "0006",
-									"_id": "0017",
-									"value": "item1",
+									"parent": "0022",
+									"_id": "0026",
+									"value": "Upgrade",
 									"children": [
 													
 									]
 								},
 								{
-									"parent": "0006",
-									"_id": "0018",
-									"value": "item1",
+									"parent": "00022",
+									"_id": "0027",
+									"value": "Tune-up",
 									"children": [
 													
 									]
@@ -144,22 +130,22 @@ var dataSet1 = {
 							]
 						},
 						{
-							"parent": "0001",
-							"_id": "0007",
-							"value": "item1",
+							"parent": "0002",
+							"_id": "0023",
+							"value": "Shocks",
 							"children": [
 								{
-									"parent": "0007",
-									"_id": "0019",
-									"value": "item1",
+									"parent": "0023",
+									"_id": "0028",
+									"value": "High",
 									"children": [
 													
 									]
 								},
 								{
-									"parent": "0007",
-									"_id": "0020",
-									"value": "item1",
+									"parent": "0023",
+									"_id": "0029",
+									"value": "Low",
 									"children": [
 													
 									]
@@ -171,8 +157,19 @@ var dataSet1 = {
 		]
 };
 
-var exSet = dataSet1.items;
+function loadJsonDoc(filename){
+	if(window.XMLHttpRequest){
+		xhttp=new XMLHttpRequest();
+	}else{
 
+		xhttp=new ActiveXObject("Microsoft.XMLHTTP");	
+	}
+	xhttp.open("GET",filename,false);
+	xhttp.send();
+	return JSON.parse(xhttp);
+}
+var exSet = loadJsonDoc('tree.json').items;
+// var exSet = dataSet1.items;
 
 function print (x) {
 	console.log(x);
@@ -267,8 +264,8 @@ Object.prototype.createSelects = function(par_element) {
 
 Element.prototype.remove = function() {
     // console.log(this.parentNode.parentNode);
-    print(this.parentNode);
-    print(this);
+    // print(this.parentNode);
+    // print(this);
     this.parentNode.removeChild(this);    	
     
     
@@ -306,12 +303,12 @@ function getIndex ( current) {
 
 function removeSelects (current) {
 	// find index of the current element warning: Inefficient
-	console.log(current);
+	// console.log(current);
 	var childrenVals = [];
 	var nextChildrenVals = [];
 	var  allSelects = $('select');
 	var index = getIndex(current);
-	console.log(index);
+	// console.log(index);
 	while(allSelects.length > index + 2){
 		allSelects[allSelects.length-1].remove();
 	}
@@ -324,29 +321,6 @@ function removeSelects (current) {
 	}
 
 	
-	// console.log(allSelects.remove(-2));
-
-	// var selVal = exSet.findById(current.value);
-	// // The currentValue's children
-	// for (var i = 0; i < selVal.children.length; i++) {
-	// 	childrenVals.push(selVal.children[i]._id);
-	// }
-	// print(allSelects[allSelects.length - 1].options);
-	// for (var j = 0; j < allSelects[allSelects.length - 1].options.length; j++) {
-	// 	nextChildrenVals.push(allSelects[allSelects.length - 1].options[j].value);
-	// }
-	// console.log(childrenVals);
-	// print(nextChildrenVals);
-	// // allSelects[allSelects.length-1]
-	// if (childrenVals === nextChildrenVals) {
-	// 	// allSelects[allSelects.length-1].remove();
-	// 	print(allSelects[allSelects.length-1]);
-	// 	print('fuck');	
-	// }
-
-	
-	// print("DERP")
-	
 	
 
 }
@@ -355,20 +329,55 @@ function listenerArg (event) {
 	// console.log(this.value);
 	// console.log(this);
 	var derp = exSet.findById(this.value);
-	derp.children.createSelects('body');
+	derp.children.createSelects('#ie8gt');
 	removeSelectListeners();
 
 	removeSelects(this);
 	addSelectListener();
+	if(derp.endChildren()){
+		console.log("Final Event Here");
+	}
+	// console.log(derp);
 }
+
+
+// Checks if either of select's options don't have children. return true if they don't
+Object.prototype.endChildren = function () {
+	if (this.children.length === 0) {
+		return true;
+	}
+	return false;
+};
 
 
 function removeSelectListeners () {
 	var  allSelects = $('select');
 	for (var i = 0; i < allSelects.length; i++) {
-		allSelects[i].removeEventListener('change', listenerArg, false);
+		allSelects[i].removeEvent('change', listenerArg);
 	}
 }
+
+
+Element.prototype.addEvent = function (evnt, func) {
+   if (this.addEventListener)  // W3C DOM
+      this.addEventListener(evnt,func,false);
+   else if (elem.attachEvent) { // IE DOM
+      this.attachEvent("on"+evnt, func);
+   }
+   else { // No much to do
+      this[evnt] = func;
+   }
+};
+
+Element.prototype.removeEvent = function(type, handler) {
+        if (this.removeEventListener) {
+            this.removeEventListener(type, handler, false);
+        } else if (element.detachEvent) {
+            this.detachEvent("on" + type, handler);
+        } else {
+            this["on" + type] = null;
+        }
+    };
 
 
 function addSelectListener() {
@@ -376,7 +385,8 @@ function addSelectListener() {
 	var  allSelects = $('select');
 	for(var i=0;i<allSelects.length;i++){
 			// console.log(allSelects[i]);
-	       allSelects[i].addEventListener('change', listenerArg, false);
+	       allSelects[i].addEvent('change', listenerArg);
+	       // addEventListener('change', listenerArg, false);
 	   }
 }
 
@@ -484,7 +494,16 @@ function PrivateVariables() {
 
 
 function createFirstSelect () {
-	exSet.createSelects('body');
-	addSelectListener();
+	var ie7 = (document.all && !window.opera && window.XMLHttpRequest) ? true : false;
+	if (ie7) {
+		var cont = document.getElementById('container');
+		var parent = document.body;
+		var p = document.createElement('p');
+		p.appendChild(document.createTextNode("Sorry, We don't support your browser"));
+	}else{
+		exSet.createSelects('#ie8gt');
+		addSelectListener();	
+	}
+	
 }
 

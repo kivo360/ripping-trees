@@ -1,136 +1,170 @@
 {
 	"items": [
-		{
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
+				{
+					"parent": "#",
+					"_id": "0001",
+					"value": "item1",
+					"children": [
+						{
+							"parent": "0001",
+							"_id": "0005",
+							"value": "item1",
+							"children": [
 								{
-									"name": "item3",
-									"lvl3": [
-				
+									"parent": "0005",
+									"_id": "0015",
+									"value": "item1",
+									"children": [
+										{
+											"parent": "0015",
+											"_id": "0025",
+											"value": "item1",
+											"children": [
+															
+											]
+										}		
 									]
-								}
-
-						]
-					},
-
-			]
-		}, {
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
-							{
-								"name": "item3",
-								"lvl3": [
-			
-								]
-							}
-
-						]
-					},
-
-			]
-		},
-		{
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
-							{
-								"name": "item3",
-								"lvl3": [
-			
-								]
-							}
-
-						]
-					},
-
-			]
-		},
-		{
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
-							{
-								"name": "item3",
-								"lvl3": [
-			
-								]
-							}
-
-						]
-					},
-
-			]
-		},
-		{
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
-							{
-								"name": "item3",
-								"lvl3": [
-			
-								]
-							}
-
-						]
-					},
-
-			]
-		},
-		{
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
-							{
-								"name": "item3",
-								"lvl3": [
-			
-								]
-							}
-
-						]
-					},
-
-			]
-		},
-		{
-			"name": "item1",
-			"lvl1": [
-					{
-						"name": "item3",
-						"lvl2": [
-
-							{
-								"name": "item3",
-								"lvl3": [
-			
-								]
-							}
-
-						]
-					},
-
-			]
-		}
-	]
-}
+								},
+								{
+									"parent": "0005",
+									"_id": "0016",
+									"value": "item1",
+									"children": [
+													
+									]
+								}				
+							]
+						},
+						{
+							"parent": "0001",
+							"_id": "0006",
+							"value": "item1",
+							"children": [
+								{
+									"parent": "0006",
+									"_id": "0017",
+									"value": "item1",
+									"children": [
+													
+									]
+								},
+								{
+									"parent": "0006",
+									"_id": "0018",
+									"value": "item1",
+									"children": [
+													
+									]
+								}	
+							]
+						},
+						{
+							"parent": "0001",
+							"_id": "0007",
+							"value": "item1",
+							"children": [
+								{
+									"parent": "0007",
+									"_id": "0019",
+									"value": "item1",
+									"children": [
+													
+									]
+								},
+								{
+									"parent": "0007",
+									"_id": "0020",
+									"value": "item1",
+									"children": [
+													
+									]
+								}	
+							]
+						}	
+					]
+				},
+				{
+					"parent": "#",
+					"_id": "0002",
+					"value": "item2",
+					"children": [
+						{
+							"parent": "0001",
+							"_id": "0005",
+							"value": "item1",
+							"children": [
+								{
+									"parent": "0005",
+									"_id": "0015",
+									"value": "item1",
+									"children": [
+										{
+											"parent": "0015",
+											"_id": "0025",
+											"value": "item1",
+											"children": [
+															
+											]
+										}		
+									]
+								},
+								{
+									"parent": "0005",
+									"_id": "0016",
+									"value": "item1",
+									"children": [
+													
+									]
+								}				
+							]
+						},
+						{
+							"parent": "0001",
+							"_id": "0006",
+							"value": "item1",
+							"children": [
+								{
+									"parent": "0006",
+									"_id": "0017",
+									"value": "item1",
+									"children": [
+													
+									]
+								},
+								{
+									"parent": "0006",
+									"_id": "0018",
+									"value": "item1",
+									"children": [
+													
+									]
+								}	
+							]
+						},
+						{
+							"parent": "0001",
+							"_id": "0007",
+							"value": "item1",
+							"children": [
+								{
+									"parent": "0007",
+									"_id": "0019",
+									"value": "item1",
+									"children": [
+													
+									]
+								},
+								{
+									"parent": "0007",
+									"_id": "0020",
+									"value": "item1",
+									"children": [
+													
+									]
+								}	
+							]
+						}	
+					]
+				}
+		]
+};
